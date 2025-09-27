@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unidad 1 - Ataques Cibernéticos</title>
+
+  <!-- Bootstrap 4 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <style>
+    /* Estilo totalmente distinto al original */
+    :root{
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --accent: #2d6cdf;
+      --muted: #6b7280;
+      --header: #162029;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: #111827;
+    }
+
+    /* Barra superior */
+    .navbar{
+      background: linear-gradient(90deg,#0f1724,#162029);
+      padding: 0.5rem 1rem;
+    }
+    .navbar .navbar-brand{
+      color: #fff;
+      font-weight:700;
+      letter-spacing:0.4px;
+    }
+    .navbar .nav-link{
+      color: #dbeafe !important;
+    }
+    .navbar .nav-link:hover{
+      color: var(--accent) !important;
+    }
+
+    /* Hero simple */
+    .hero{
+      padding: 36px 16px;
+      text-align:center;
+      background: transparent; /* sin fondo como pediste */
+    }
+    .hero h1{
+      margin:0;
+      font-size:2.1rem;
+      color: var(--header);
+    }
+    .hero p{
+      margin:8px 0 0;
+      color: var(--muted);
+      font-size:1rem;
+    }
+
+    /* Contenedor principal */
+    .wrap{
+      max-width:1100px;
+      margin:26px auto;
+      padding:0 16px;
+    }
+    .card-like{
+      background: var(--card);
+      border-radius:10px;
+      padding:18px;
+      box-shadow: 0 6px 20px rgba(8,15,28,0.06);
+      overflow: auto;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      font-size:14px;
+    }
+    thead th{
+      background: linear-gradient(180deg,#243447,#1b2a37);
+      color:#fff;
+      padding:12px;
+      text-align:left;
+      font-weight:600;
+      font-size:14px;
+      vertical-align:middle;
+    }
+    tbody td{
+      padding:12px;
+      border-bottom:1px solid #eef2f6;
+      vertical-align:middle;
+      color:#111827;
+    }
+
+    /* Imagenes */
+    img.attack-img{
+      width:auto;
+      max-width:96px;
+      height:auto;
+      border-radius:6px;
+      display:block;
+      box-shadow: 0 4px 12px rgba(14,30,50,0.06);
+    }
+
+    @media (max-width:768px){
+      .hero h1{font-size:1.6rem;}
+      img.attack-img{max-width:64px;}
+      thead th, tbody td{padding:10px;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="Abel.html">Inicio</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navc">
+        <span class="navbar-toggler-icon" style="color:#fff;">☰</span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navc">
+        <ul class="navbar-nav ml-3">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Unidad 1</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="./index.html">Conceptos</a>
+              <a class="dropdown-item active" href="./index2.html">Ataques</a>
+              <a class="dropdown-item" href="./index3.html">Protección</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Unidad 2</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="./index4.html">Conceptos</a>
+              <a class="dropdown-item" href="./index5.html">Ataques</a>
+              <a class="dropdown-item" href="./index6.html">Protección</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Unidad 3</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="./index7.html">Conceptos</a>
+              <a class="dropdown-item" href="./index8.html">Ataques</a>
+              <a class="dropdown-item" href="./index9.html">Protección</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero (sin imagen de fondo) -->
+  <header class="hero">
+    <h1>Unidad 1 — Ataques</h1>
+    <p>Descripción, impacto y ejemplos reales para estudiar y prevenir.</p>
+  </header>
+
+  <!-- Contenido -->
+  <main class="wrap">
+    <div class="card-like">
+      <table aria-describedby="caption">
+        <caption id="caption" style="caption-side:top; text-align:left; font-weight:700; padding-bottom:12px;">
+          Lista de 12 ataques de ciberseguridad
+        </caption>
+        <thead>
+          <tr>
+            <th>Ataque</th>
+            <th>Descripción</th>
+            <th>Impacto</th>
+            <th>Ejemplo</th>
+            <th>Imagen</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-ataques"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    /* Datos: mismos textos que tenías, organizados */
+    const ataques = [
+      {
+        "ataque":"Phishing",
+        "descripcion":"Engaña al usuario para robar credenciales mediante correos falsos o páginas clonadas.",
+        "impacto":"Robo de identidad, pérdida de datos.",
+        "ejemplo":"Correo falso de un banco solicitando confirmar contraseña.",
+        "imagen":"img/img1.png"
+      },
+      {
+        "ataque":"Ransomware",
+        "descripcion":"Cifra archivos y exige rescate para restaurarlos.",
+        "impacto":"Pérdida de acceso a datos, costes económicos.",
+        "ejemplo":"Mensaje que exige pago en criptomonedas para recuperar archivos.",
+        "imagen":"img/img2.png"
+      },
+      {
+        "ataque":"DDoS",
+        "descripcion":"Satura un servicio con tráfico para dejarlo inaccesible.",
+        "impacto":"Interrupción del servicio, pérdidas económicas.",
+        "ejemplo":"Tráfico masivo que tumba una tienda en línea durante horas.",
+        "imagen":"img/img3.png"
+      },
+      {
+        "ataque":"SQL Injection",
+        "descripcion":"Inserta código SQL malicioso para acceder o manipular bases de datos.",
+        "impacto":"Exposición o borrado de datos sensibles.",
+        "ejemplo":"Ingresar ' OR '1'='1 en formulario de login vulnerable.",
+        "imagen":"img/img4.png"
+      },
+      {
+        "ataque":"XSS (Cross-Site Scripting)",
+        "descripcion":"Inyección de scripts maliciosos en páginas web vistas por otros usuarios.",
+        "impacto":"Robo de cookies, secuestro de sesión.",
+        "ejemplo":"Comentario en un foro que ejecuta JavaScript en la sesión de otros.",
+        "imagen":"img/img5.png"
+      },
+      {
+        "ataque":"Man-in-the-Middle (MitM)",
+        "descripcion":"Intercepción de la comunicación entre dos partes para espiar o alterar datos.",
+        "impacto":"Robo de credenciales o modificación de mensajes.",
+        "ejemplo":"Ataque en una red Wi-Fi pública que intercepta formularios.",
+        "imagen":"img/img6.png"
+      },
+      {
+        "ataque":"Spyware",
+        "descripcion":"Software que recoge información del usuario sin su consentimiento.",
+        "impacto":"Filtración de información personal y bancaria.",
+        "ejemplo":"Aplicación que envía historial de navegación a un servidor remoto.",
+        "imagen":"img/img7.png"
+      },
+      {
+        "ataque":"Keylogger",
+        "descripcion":"Registra las teclas pulsadas para capturar contraseñas y datos.",
+        "impacto":"Robo de credenciales y datos sensibles.",
+        "ejemplo":"Programa oculto que guarda todo lo que el usuario escribe.",
+        "imagen":"img/img8.png"
+      },
+      {
+        "ataque":"Malware (Troyano)",
+        "descripcion":"Programa malicioso que se hace pasar por algo legítimo para engañar al usuario.",
+        "impacto":"Robo de información, control remoto del equipo.",
+        "ejemplo":"Instalador falso que incluye un troyano.",
+        "imagen":"img/img9.png"
+      },
+      {
+        "ataque":"Rootkit",
+        "descripcion":"Herramientas que ocultan la presencia de malware en el sistema.",
+        "impacto":"Acceso persistente y difícil de detectar.",
+        "ejemplo":"Componentes que evitan la detección por antivirus.",
+        "imagen":"img/img10.png"
+      },
+      {
+        "ataque":"Brute Force",
+        "descripcion":"Prueba masiva de combinaciones para adivinar contraseñas.",
+        "impacto":"Acceso no autorizado a cuentas débiles.",
+        "ejemplo":"Script que prueba miles de contraseñas en un login.",
+        "imagen":"img/img11.png"
+      },
+      {
+        "ataque":"Zero-Day",
+        "descripcion":"Explotación de una vulnerabilidad desconocida para el fabricante.",
+        "impacto":"Compromiso instantáneo sin parche disponible.",
+        "ejemplo":"Exploit que ataca un navegador antes de actualizarse.",
+        "imagen":"img/img12.png"
+      }
+    ];
+
+    /* Escapa HTML para evitar inyección en la tabla */
+    function esc(s){
+      return String(s)
+        .replace(/&/g,'&amp;')
+        .replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;')
+        .replace(/"/g,'&quot;')
+        .replace(/'/g,'&#39;');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const tbody = document.getElementById('tbody-ataques');
+      ataques.forEach(a => {
+        const imgCell = a.imagen ? `<img class="attack-img" src="${esc(a.imagen)}" alt="${esc(a.ataque)}">` : 'Sin imagen';
+        const row = `
+          <tr>
+            <td>${esc(a.ataque)}</td>
+            <td>${esc(a.descripcion)}</td>
+            <td>${esc(a.impacto)}</td>
+            <td>${esc(a.ejemplo)}</td>
+            <td>${imgCell}</td>
+          </tr>
+        `;
+        tbody.insertAdjacentHTML('beforeend', row);
+      });
+    });
+  </script>
+
+</body>
+</html>
